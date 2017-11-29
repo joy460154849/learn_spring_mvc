@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>startspringmvc</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 配置 HiddenHttpMethodFilter可以把post请求转为delete或者post请求-->
+	<filter>
+		<filter-name>HiddenHttpMethodFilter</filter-name>
+		<filter-class> org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>HiddenHttpMethodFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+  
+  <!-- 配置DispatcherServlet(创建方法：alt+/  选中DispatcherServlet) -->
+
+<!-- The front controller of this Spring Web application, responsible for handling all application requests -->
+	<!-- <servlet>
+		<servlet-name>springDispatcherServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		配置DispacherServlet的一个初始化参数，作用是配置springMVC的位置和名称
+		实际上可以不通过contextCongigLocation来配置springMVC的配置文件，可以使用默认的 
+		默认的配置文件为：/WEB-INF/<servlet-name >-servlet.xml</servlet>
+		然后把springmvc.xml文件放到：/WEB-INF/目录下，
+		同时把springmvc.xml文件名更名为springDispatcherServlet-servlet.xml
+		
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:springmvc.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	Map all requests to the DispatcherServlet for handling
+	<servlet-mapping>
+		<servlet-name>springDispatcherServlet</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping> -->
+</web-app>
