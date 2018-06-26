@@ -1,17 +1,8 @@
 package startspringmvc;
 
-import java.util.Properties;
-
-import javax.validation.Validator;
-
-import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
-import org.springframework.context.support.ReloadableResourceBundleMessageSource;
-import org.springframework.orm.hibernate3.HibernateInterceptor;
-import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -19,6 +10,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+/**
+ *如果没有配置视图解析器，spring会默认使用BeanNameView-Resolver,这个视图解析器会查找ID与视图名匹配的bean
+ */
 @Configuration
 @EnableWebMvc
 //@Import(WebConfig2.class)
